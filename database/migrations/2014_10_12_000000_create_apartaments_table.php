@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApartamentTable extends Migration
+class CreateApartamentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateApartamentTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartament', function (Blueprint $table) {
+        Schema::create('apartaments', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->timestamps();
         });
     }
 
