@@ -77,9 +77,8 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
-            <livewire:web>
+            @yield('content')
         </main>
     </div>
 </body>

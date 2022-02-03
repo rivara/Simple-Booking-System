@@ -17,6 +17,11 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $dates = [
+        'birthday',
+    ];
+
+
     protected $fillable = [
         'name',
         'email',
@@ -42,4 +47,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('d-m-Y');
+    }
+
 }
