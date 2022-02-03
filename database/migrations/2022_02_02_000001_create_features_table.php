@@ -27,6 +27,6 @@ class CreateFeaturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feature');
+        Schema::dropIfExists('features');
     }
 }

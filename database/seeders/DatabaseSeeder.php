@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/apartaments.sql');
         DB::statement($sql);
-        $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/apartaments_features.sql');
-        DB::statement($sql);
         $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/features.sql');
+        DB::statement($sql);
+        $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/apartaments_featrures.sql');
         DB::statement($sql);
         
     }
