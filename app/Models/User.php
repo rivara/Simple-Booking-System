@@ -48,9 +48,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('d-m-Y');
-    }
-
 }

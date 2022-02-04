@@ -1,0 +1,21 @@
+.box{
+    background-color:#ffefec;
+    padding: 20px;
+    border: 1px solid #ff4826;
+    margin:10px;
+}
+ .orange{
+    color: #ff4826;
+}
+
+ .floatleft{
+    float: left;
+}
+
+.floatright{
+    float: right;
+}
+
+.wrapper{
+    width: 100%;
+}
