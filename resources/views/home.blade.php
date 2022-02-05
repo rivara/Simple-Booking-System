@@ -1,6 +1,7 @@
 @extends('layouts.app')
-@livewireScripts
+@livewireStyles
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -15,12 +16,5 @@
         </div>
     </div>
 </div>
-
-@livewireScripts
-<script>
-    $(document).ready(function () {
-        $('.selectpicker').selectpicker();
-    })
-</script>
-
 @endsection
+@livewireScripts
