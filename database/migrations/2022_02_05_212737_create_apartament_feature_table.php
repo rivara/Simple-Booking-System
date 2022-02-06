@@ -14,6 +14,7 @@ class CreateApartamentFeatureTable extends Migration
     public function up()
     {
         Schema::create('apartament_feature', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('apartament_id')->constrained();
             $table->foreignId('feature_id')->constrained();
         });

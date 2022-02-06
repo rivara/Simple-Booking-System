@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ApartamentFeature extends Model
 {
     use HasFactory;
+    public $table = 'apartament_feature';
+
 }
