@@ -24,30 +24,47 @@ use App\Models\Apartament;
                 @endforelse
             </div>
             <div class="col-md-6"></div>
-        <!-- APARTAMENT LIST-->
-                <!-- get element -->
-                <?php 
-                // $features=Feature::whereIn('id',$this->selectedFeatures)->get();
-       // $apartaments_ids=ApartamentFeature::whereIn('feature_id',$this->selectedFeatures)->pluck('apartament_id');
-       // $this->apartaments=Apartament::whereIn('id',$apartaments_ids)->get();
-                ?>
-                
-                <?php $apartament_ids=ApartamentFeature::whereIn('feature_id',$feature_ids )->distinct('apartament_id')->pluck('apartament_id')?>
 
+
+         
+
+
+        <!-- VALIDATION -->
+
+            @if($message!=null)
+                @if($message='18')
+                    <div class="alert alert-danger error" role="alert" >
+                        Must be oltther tan 18 :(
+                    </div>
+                @endif
+                @if($message='occupied')
+                    <div class="alert alert-danger error" role="alert">
+                        This apartament is reserved :(
+                    </div>
+                @endif
+                @if($message='ok')
+                    <div class="alert alert-success error" role="alert">
+                        The request must be approved :)
+                    </div>
+                @endif
+            @endisset
+            {{$message}}
+
+        <!-- APARTAMENT LIST-->
+                <?php $apartament_ids=ApartamentFeature::whereIn('feature_id',$feature_ids )->distinct('apartament_id')->pluck('apartament_id')?>
                 @foreach($apartament_ids as $apartament_id)
-                <div class="col-md-2"></div>
-                <div class="col-md-8 box">
-                    <div class="floatleft">
-                            <i class="fas fa-home fa-5x orange"></i>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 box">
+                        <div class="floatleft">
+                                <i class="fas fa-home fa-5x orange"></i>
+                        </div>
+                        <div class="floatright">
+                            <b>{{Apartament::find($apartament_id)->description}}</b>
+                            <b>{{Apartament::find($apartament_id)->reserved}}</b>
+                            <button   wire:click="getApproves('{{ $apartament_id }}')"  class="btn btn-primary floatright" value="{{$apartament_id}}">Get Approves</button>    
+                        </div>
                     </div>
-                    <div class="floatright">
-                   
-                        <b>{{Apartament::find($apartament_id)->description}}</b>
-                        <b>{{Apartament::find($apartament_id)->reserved}}</b>
-                        <button type="button" class="btn btn-primary floatright" value="{{$apartament_id}}">Get</button>    
-                    </div>
-                </div>
-                <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
                 @endforeach
         </div>
     </div>
@@ -55,15 +72,17 @@ use App\Models\Apartament;
 
 
 <script>
-$(document).ready(function() {
-    $('#taskSelect').select2();
+       $(document).ready(function() {
 
-    $('#taskSelect').on('change', function (e) {
+        $('#taskSelect').select2();
+        $('#taskSelect').on('change', function (e) {
+            //@this.set('selectedFeatures', $(this).val());
+            @this.set('selectedFeatures',[$("option:selected", this).text()]);
+            //send to backend
+            @this.set('feature_ids',$(this).val());
+        });
 
-        //@this.set('selectedFeatures', $(this).val());
-        @this.set('selectedFeatures',[$("option:selected", this).text()]);
-        //send to backend
-        @this.set('feature_ids',$(this).val());
-    });
+        
+        $('.error').delay(500).fadeOut('slow');
 });
 </script>
