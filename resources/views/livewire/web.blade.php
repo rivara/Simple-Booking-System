@@ -32,23 +32,22 @@ use App\Models\Apartament;
         <!-- VALIDATION -->
 
             @if($message!=null)
-                @if($message='18')
-                    <div class="alert alert-danger error" role="alert" >
+                @if($message=='18')
+                    <div id="message" class="alert alert-danger error" role="alert" >
                         Must be oltther tan 18 :(
                     </div>
                 @endif
-                @if($message='occupied')
-                    <div class="alert alert-danger error" role="alert">
+                @if($message=='occupied')
+                    <div id="message" class="alert alert-danger error" role="alert">
                         This apartament is reserved :(
                     </div>
                 @endif
-                @if($message='ok')
-                    <div class="alert alert-success error" role="alert">
+                @if($message=='ok')
+                    <div id="message" class="alert alert-success error" role="alert">
                         The request must be approved :)
                     </div>
                 @endif
             @endisset
-            {{$message}}
 
         <!-- APARTAMENT LIST-->
                 <?php $apartament_ids=ApartamentFeature::whereIn('feature_id',$feature_ids )->distinct('apartament_id')->pluck('apartament_id')?>
@@ -83,6 +82,8 @@ use App\Models\Apartament;
         });
 
         
-        $('.error').delay(500).fadeOut('slow');
+        setTimeout(function() {
+        $("#message").hide('blind', {}, 500)
+        }, 5000);
 });
 </script>
