@@ -5,6 +5,7 @@ use App\Models\Feature;
 use App\Models\Apartament;
 use App\Models\ApartamentFeature;
 use Livewire\Component;
+use Illuminate\Notifications\Messages\MailMessage;
 use  DateTime;
 class Web extends Component
 {
@@ -21,7 +22,7 @@ class Web extends Component
 
     
  
-/**
+/** https://laravel.com/docs/8.x/notifications#formatting-mail-messages
  * Get the mail representation of the notification.
  *
  * @param  mixed  $notifiable
@@ -44,14 +45,14 @@ class Web extends Component
         }elseif($apartament_id == 0){
             return   $this->message ='occupied';
         }else{
-           
-            //send mail 
-            $url = url('/confirm/'.$apartament_id.'?1');
-            return (new MailMessage)
-            ->greeting('Hello!')
-            ->line('One of your invoices has been paid!')
-            ->action('Aprueve Invoice', $url)
-            ->line('Thank you for using our application!');
+            $errolermentdata=[
+                'body'=>'do it',
+                'enrrolerment'=>'your bare alow',
+                'url'=>url('/'),
+                'thankyou'=>'thnks'
+            ];
+            $landLord=LandLord::where('apartament_id',$apartament_id);
+            $landLord->notify(New Varify($errolermentdata));
         }
        
 
