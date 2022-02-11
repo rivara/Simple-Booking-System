@@ -8,13 +8,11 @@ use App\Models\Apartament;
 class Feature extends Model
 {
     use HasFactory;
-
     public $table = 'features';
-
-  
     protected $fillable = [
         'id',
         'name',
+        'mail',
     ];
 
    

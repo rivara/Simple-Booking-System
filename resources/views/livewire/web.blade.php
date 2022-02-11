@@ -3,6 +3,7 @@
 use App\Models\Feature; 
 use App\Models\ApartamentFeature;
 use App\Models\Apartament;
+use App\Models\Landlord;
 ?>
 <div class="container">
     <div class="row">
@@ -54,12 +55,12 @@ use App\Models\Apartament;
                 @foreach($apartament_ids as $apartament_id)
                     <div class="col-md-2"></div>
                     <div class="col-md-8 box">
-                        <div class="floatleft">
+                      
                                 <i class="fas fa-home fa-5x orange"></i>
-                        </div>
-                        <div class="floatright">
-                            <b>{{Apartament::find($apartament_id)->description}}</b>
-                            <b>{{Apartament::find($apartament_id)->reserved}}</b>
+                     
+                            <b>{{Apartament::find($apartament_id)->description}}</b><br>
+                            <b>{{Landlord::find(Apartament::find($apartament_id)->landlord_id)->name }}</b><br>
+
                             <button   wire:click="getApproves('{{ $apartament_id }}')"  class="btn btn-primary floatright" value="{{$apartament_id}}">Get Approves</button>    
                         </div>
                     </div>

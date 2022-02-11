@@ -18,6 +18,13 @@ class CreateApartamentsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->boolean('reserved');
+
+             // define foreign key
+             $table->foreignId('landlord_id')
+             ->reference('id')
+             ->on('landlord')
+             ->onUpdate('cascade')
+             ->onDelete('cascade');
         });
     }
 

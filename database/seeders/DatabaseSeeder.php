@@ -15,15 +15,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/apartaments.sql');
+        
+        $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/landlord.sql');
         DB::statement($sql);
         $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/features.sql');
-        DB::statement($sql);
-        //foreach(Apartament::all() as $apartament){
-        //$apartament->features()->attach(1);
-        //}
+        DB::statement($sql);  
+        $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/apartaments.sql');
+        DB::statement($sql);      
         $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/apartament_feature.sql');
         DB::statement($sql);
-        
+
+
+     
     }
 }

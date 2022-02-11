@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 use App\Models\Feature;
 use App\Models\Apartament;
 use App\Models\ApartamentFeature;
+use App\Models\Landlord;
+use App\Notifications\Verify;
 use Livewire\Component;
 use Illuminate\Notifications\Messages\MailMessage;
 use  DateTime;
@@ -52,7 +54,7 @@ class Web extends Component
                 'thankyou'=>'thnks'
             ];
             $landLord=LandLord::where('apartament_id',$apartament_id);
-            $landLord->notify(New Varify($errolermentdata));
+            $landLord->notify(New Verify($errolermentdata));
         }
        
 
