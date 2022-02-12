@@ -27,9 +27,7 @@ use App\Models\Landlord;
             <div class="col-md-6"></div>
 
 
-         
-
-
+        
         <!-- VALIDATION -->
 
             @if($message!=null)
@@ -55,13 +53,21 @@ use App\Models\Landlord;
                 @foreach($apartament_ids as $apartament_id)
                     <div class="col-md-2"></div>
                     <div class="col-md-8 box">
-                      
-                                <i class="fas fa-home fa-5x orange"></i>
-                     
-                            <b>{{Apartament::find($apartament_id)->description}}</b><br>
-                            <b>{{Landlord::find(Apartament::find($apartament_id)->landlord_id)->name }}</b><br>
-
-                            <button   wire:click="getApproves('{{ $apartament_id }}')"  class="btn btn-primary floatright" value="{{$apartament_id}}">Get Approves</button>    
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <i class="fas fa-home fa-5x orange"></i>
+                                    </div>
+                                    <div class="col-md-4">   
+                                        <p>Apartament:&nbsp;<b>{{Apartament::find($apartament_id)->description}}</b></p>
+                                        <p>LandLord:&nbsp;<b>{{Landlord::find(Apartament::find($apartament_id)->landlord_id)->name }}</b></p>
+                                    </div>  
+                                    <div class="col-md-4"> 
+                                        <br /><br />
+                                        <button   wire:click="getApproves('{{ $apartament_id }}')"  class="btn btn-secondary floatright" value="{{$apartament_id}}">Get Approves</button>    
+                                    </div> 
+                                </div>   
+                            </div>    
                         </div>
                     </div>
                     <div class="col-md-2"></div>

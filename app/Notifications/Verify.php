@@ -10,15 +10,15 @@ use Illuminate\Notifications\Notification;
 class Verify extends Notification
 {
     use Queueable;
-    private $enrrolmentData;
+    private $details;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($enrrolmentData)
+    public function __construct($details)
     {
-       $this->enrrolmentData=$enrrolmentData;
+       $this->details=$details;
     }
 
     /**
@@ -40,10 +40,12 @@ class Verify extends Notification
      */
     public function toMail($notifiable)
     {
+      
         return (new MailMessage)
-                    ->line($enrrolmentData['body'])
-                    ->action($enrrolmentData['enrrollemntText'], $enrrolmentData['url'])
-                    ->line($enrrolmentData['thankyou']);
+        ->greeting('Hello!')
+        ->line('One of your invoices has been paid!')
+        ->action('View Invoice','algo')
+        ->line('Thank you for using our application!');
     }
 
     /**

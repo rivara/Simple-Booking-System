@@ -1,11 +1,11 @@
 .box{
     background-color:#ffefec;
     padding: 20px;
-    border: 1px solid #ff4826;
+    border: 1px solid grey;
     margin:10px;
 }
  .orange{
-    color: #ff4826;
+    color: silver;
 }
 
  .floatleft{

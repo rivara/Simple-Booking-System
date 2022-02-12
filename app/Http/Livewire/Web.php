@@ -5,7 +5,9 @@ use App\Models\Feature;
 use App\Models\Apartament;
 use App\Models\ApartamentFeature;
 use App\Models\Landlord;
+use App\Models\User;
 use App\Notifications\Verify;
+use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 use Illuminate\Notifications\Messages\MailMessage;
 use  DateTime;
@@ -47,14 +49,16 @@ class Web extends Component
         }elseif($apartament_id == 0){
             return   $this->message ='occupied';
         }else{
-            $errolermentdata=[
-                'body'=>'do it',
-                'enrrolerment'=>'your bare alow',
-                'url'=>url('/'),
-                'thankyou'=>'thnks'
-            ];
-            $landLord=LandLord::where('apartament_id',$apartament_id);
-            $landLord->notify(New Verify($errolermentdata));
+                $errolermentdata=[
+                    'body'=>'do it',
+                    'enrrolerment'=>'your bare alow',
+                    'url'=>url('/'),
+                    'thankyou'=>'thnks'
+                ];
+            //$landLord=LandLord::where('apartament_id',$apartament_id);
+            $user=User::find(1);
+            Notification::send($user,new Verify('aa'));
+            return   $this->message ='ok';
         }
        
 
