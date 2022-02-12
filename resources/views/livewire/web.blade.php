@@ -56,7 +56,7 @@ use App\Models\Landlord;
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-4">   
-                                        <i class="fas fa-home fa-5x orange"></i>
+                                        <i class="fas fa-home fa-5x grey"></i>
                                     </div>
                                     <div class="col-md-4">   
                                         <p>Apartament:&nbsp;<b>{{Apartament::find($apartament_id)->description}}</b></p>

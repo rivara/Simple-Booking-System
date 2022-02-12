@@ -1,4 +1,3 @@
-INSERT INTO `landlord` (`id`, `name`, `mail`) VALUES 
-('1', 'Paco Gomez', 'ricardo_valle_ramirez@hotmail.com'),
-('2', 'Pablo Ruiz', 'algo@algo.com'),
-('3', 'Santos Saez', 'algo@algo.com'); 
+INSERT INTO `landlord` (`id`, `name`, `type_id`) VALUES 
+('1', 'urgent to sell',  '1'),
+('2', 'not urgent to sell',  '2');

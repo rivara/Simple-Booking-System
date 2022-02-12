@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        
+        $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/user.sql');
+        DB::statement($sql);
         $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/landlord.sql');
         DB::statement($sql);
         $sql = file_get_contents(database_path() . '/seeders/ficheros_bd/features.sql');
