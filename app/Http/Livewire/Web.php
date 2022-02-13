@@ -14,7 +14,6 @@ use  DateTime;
 class Web extends Component
 {
     public $features = [];
-    public $selectedFeatures = [];
     public $feature_ids = [];
     public $message = null;
 
@@ -42,24 +41,26 @@ class Web extends Component
         $years=round($days/365);
 
         $ocuupated= Apartament::find($apartament_id)->reserved;
-        $landlord=Apartament::find($apartament_id)->landlord_id;
+        $landlord_id=Apartament::find($apartament_id)->landlord_id;
         if($years < 18){
             return  $this->message ='18';
      
         }elseif($apartament_id == 0){
             return   $this->message ='occupied';
         }else{
-                $errolermentdata=[
-                    'body'=>'do it',
-                    'enrrolerment'=>'your bare alow',
-                    'url'=>url('/'),
-                    'thankyou'=>'thnks'
+                $details=[
+                    'greeting'=>'Hello!!!',
+                    'body'=>'If you click on the following link you will validate the reservation of the flat',                   
+                    'actiontext'=>'Validate the flat reserved',
+                    'actionurl'=>url('/approve/'.$landlord_id),
+                    'lastline'=>'thank you!'
                 ];
-            //$landLord=LandLord::where('apartament_id',$apartament_id);
-            $user=User::where('landlord_id',Apartament::find($apartament_id)->landlord_id);
-            //RVR change parametre and adding send not by default
-            Notification::send($user,new Verify('aa'));
-            return   $this->message ='ok';
+            
+         
+           $user_id=LandLord::find($landlord_id)->user_id;     
+           $landlord=User::find($user_id);
+           Notification::send($landlord,new Verify($details));
+           return   $this->message ='ok';
         }
     }
 

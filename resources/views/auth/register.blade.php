@@ -69,14 +69,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <label class="col-md-4 col-form-label text-md-end">LandLord*</label>
-
-                            <div class="col-md-6">
-                                <input type="checkbox"  disabled>
-                                <input id="landlord_id" type="hidden"  name="landlord_id" value=0 >
-                            </div>
-                        </div>
+                
                       
 
                         <div class="row mb-0">

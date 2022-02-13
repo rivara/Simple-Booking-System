@@ -19,12 +19,12 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4"> </div>
-                    <div class="col-md-4">   
+                    <div class="col-md-5"> </div>
+                    <div class="col-md-2" style="display: block;margin-left:auto;margin-right:auto;">   
                             <i class="fas fa-home fa-9x grey"></i>
-                            <h1>&nbsp;Simple Booking</h1>
+                            <h1>Simple Booking</h1>
                     </div>
-                    <div class="col-md-4"> </div>    
+                    <div class="col-md-5"> </div>    
                 </div>
             </div>
 

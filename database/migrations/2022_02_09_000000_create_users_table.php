@@ -20,12 +20,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->date('birthday');
-            // define foreign key
-             $table->foreignId('landlord_id')
-             ->reference('id')
-             ->on('landlord')
-             ->onUpdate('cascade')
-             ->onDelete('cascade');
             $table->timestamps();
 
             

@@ -21,3 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//aprueve
+Route::get('/approve/{id}', function ($id) {
+    return view('aprueve');
+});

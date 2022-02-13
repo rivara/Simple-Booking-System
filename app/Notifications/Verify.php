@@ -40,12 +40,11 @@ class Verify extends Notification
      */
     public function toMail($notifiable)
     {
-      
         return (new MailMessage)
-        ->greeting('Hello!')
-        ->line('One of your invoices has been paid!')
-        ->action('View Invoice','algo')
-        ->line('Thank you for using our application!');
+        ->greeting($this->details['greeting'])
+        ->line($this->details['body'])
+        ->action($this->details['actiontext'],$this->details['actionurl'])
+        ->line($this->details['lastline']);
     }
 
     /**
