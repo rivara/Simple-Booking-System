@@ -79,16 +79,12 @@ use App\Models\Landlord;
 
 <script>
        $(document).ready(function() {
-
         $('#taskSelect').select2();
         $('#taskSelect').on('change', function (e) {
-            //@this.set('selectedFeatures', $(this).val());
             @this.set('selectedFeatures',[$("option:selected", this).text()]);
             //send to backend
             @this.set('feature_ids',$(this).val());
         });
-
-        
         setTimeout(function() {
         $("#message").hide('blind', {}, 500)
         }, 5000);

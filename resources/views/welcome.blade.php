@@ -22,7 +22,7 @@
                     <div class="col-md-4"> </div>
                     <div class="col-md-4">   
                             <i class="fas fa-home fa-9x grey"></i>
-                            <h1>&nbsp;Buy Home</h1>
+                            <h1>&nbsp;Simple Booking</h1>
                     </div>
                     <div class="col-md-4"> </div>    
                 </div>

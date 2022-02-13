@@ -70,12 +70,15 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">LandLord</label>
+                            <label class="col-md-4 col-form-label text-md-end">LandLord*</label>
 
                             <div class="col-md-6">
-                                <input id="type" type="checkbox"  name="type" value=0>
+                                <input type="checkbox"  disabled>
+                                <input id="landlord_id" type="hidden"  name="landlord_id" value=0 >
                             </div>
                         </div>
+                      
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -84,6 +87,8 @@
                             </div>
                         </div>
                     </form>
+
+                    <small>*this field is disable in this version</small>
                 </div>
             </div>
         </div>

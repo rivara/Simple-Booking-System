@@ -16,12 +16,7 @@ class CreateLandlordTable extends Migration
         Schema::create('landLord', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-           // define foreign key
-             $table->foreignId('type_id')
-             ->reference('type')
-             ->on('user')
-             ->onUpdate('cascade')
-             ->onDelete('cascade');
+           
             
         });
     }

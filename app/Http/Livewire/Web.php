@@ -34,7 +34,7 @@ class Web extends Component
  */
     public function getApproves($apartament_id)
     {
-        // if is older 18 send
+        // if user is older 18 send
         $user = auth()->user();
         $today = new DateTime(date("Y-m-d"));
         $userAge = new DateTime($user->birthday);
@@ -42,7 +42,7 @@ class Web extends Component
         $years=round($days/365);
 
         $ocuupated= Apartament::find($apartament_id)->reserved;
-
+        $landlord=Apartament::find($apartament_id)->landlord_id;
         if($years < 18){
             return  $this->message ='18';
      
@@ -56,18 +56,12 @@ class Web extends Component
                     'thankyou'=>'thnks'
                 ];
             //$landLord=LandLord::where('apartament_id',$apartament_id);
-            $user=User::find(1);
+            $user=User::where('landlord_id',Apartament::find($apartament_id)->landlord_id);
+            //RVR change parametre and adding send not by default
             Notification::send($user,new Verify('aa'));
             return   $this->message ='ok';
         }
-       
-
-
     }
-
-  
-
-
 
 
 
