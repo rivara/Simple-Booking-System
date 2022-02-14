@@ -51,7 +51,7 @@ class Web extends Component
                 $details=[
                     'greeting'=>'Hello!!!',
                     'body'=>'If you click on the following link you will validate the reservation of the flat',                   
-                    'actiontext'=>'Validate the flat reserved',
+                    'actiontext'=>'Validate the apartament reserved',
                     'actionurl'=>url('/approve/'.$landlord_id),
                     'lastline'=>'thank you!'
                 ];

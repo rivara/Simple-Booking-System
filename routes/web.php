@@ -21,7 +21,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//aprueve
+//approve
 Route::get('/approve/{id}', function ($id) {
-    return view('aprueve');
+    return view('approve')->with('id', $id);;
 });
+
+Route::post('/approve/finish/','approveController@change');
+
