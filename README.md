@@ -18,7 +18,7 @@
     <li>clean-code and optimize</li><small>https://phpinsights.com/</small><br>
 <br>
 <h3>*****************************<br>
-    ***       Starting      *****<br>
+    ***       Starting       *****<br>
     *****************************</h3>
 <h5>1.- Clone next url <br>
 2.- Intsall composer <br>
