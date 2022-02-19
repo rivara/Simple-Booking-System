@@ -3,7 +3,6 @@
 <h2>*****************************<br>
     ***   Code Expectations   ***<br>
     *****************************</h2>
-<br>
     <li>Create a public repository on Github and upload code in the main branch.</li>
     <li>Easy set-up of the application to be executed (i.e. docker).</li>
     <li>Create a Restful API to handle the use cases described above with PHP 1 using any framework
@@ -16,8 +15,7 @@
     <small>For that point i use livewire https://github.com/livewire/livewire </small><br>
     <li>Ensure that the business rules are satisfied with a suite of tests.</li>
     <small>testing by dusk https://laravel.com/docs/8.x/dusk</small><br>
-    <li>clean-code and optimize</li>
-    <small>https://phpinsights.com/</small><br>
+    <li>clean-code and optimize</li><small>https://phpinsights.com/</small><br>
 <br>
 <h3>*****************************<br>
     ***       Starting      *****<br>
