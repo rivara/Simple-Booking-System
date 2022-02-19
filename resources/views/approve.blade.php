@@ -11,31 +11,14 @@
         </div>
     </div>
 </div>
-
-<input type="hidden" value={{$id}} id="id_user"  />
 <!-- update db with this information -->
-<script>
-    $( document ).ready(function() {
-    // send to db 
-    $.ajaxSetup({
-     headers: {
-         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')     
-        }
-    }); 
 
-    var id=$('#id_user').val();
-    $.ajax({
-          url:'/approve/finish',
-          data:{id:id},
-          type:'post',
-          success: function () {
-                alert("ok");
-          },
-          error:function(){
-              alert('error!! it`s cant update');
-          }
-       });
-    });
-</script>
+<?php 
+use App\Models\Apartament;
+use App\Models\Landlord;
+$landlord_id=LandLord::where('user_id',$id)->pluck('id');
+Apartament::where('landlord_id',$landlord_id)->update(['reserved' => 1]);
+
+?>
 @endsection
 

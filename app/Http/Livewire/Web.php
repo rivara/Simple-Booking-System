@@ -40,12 +40,12 @@ class Web extends Component
         $days = $today->diff($userAge)->days;
         $years=round($days/365);
 
-        $ocuupated= Apartament::find($apartament_id)->reserved;
+        $ocupated= Apartament::find($apartament_id)->reserved;
         $landlord_id=Apartament::find($apartament_id)->landlord_id;
         if($years < 18){
             return  $this->message ='18';
      
-        }elseif($apartament_id == 0){
+        }elseif($ocupated == 1){
             return   $this->message ='occupied';
         }else{
                 $details=[

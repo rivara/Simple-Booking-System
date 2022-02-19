@@ -6,6 +6,10 @@ use App\Models\Apartament;
 use App\Models\Landlord;
 use App\Models\User;
 ?>
+
+
+
+
 <div class="container">
     <div class="row">
        <!-- APARTAMENT SEARCH-->

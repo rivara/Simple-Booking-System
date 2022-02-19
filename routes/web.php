@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\Apartament;
+use App\Models\User;
+use App\Models\Feature; 
+use App\Models\ApartamentFeature;
+use App\Models\Landlord;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,5 +35,5 @@ Route::get('/approve/{id}', function ($id) {
     return view('approve')->with('id', $id);;
 });
 
-Route::post('/approve/finish/','approveController@change');
+
 

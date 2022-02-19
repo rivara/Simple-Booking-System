@@ -12,7 +12,9 @@ class Apartament extends Model
 
     public $table = 'apartaments';
 
+ protected $fillable = ['title','description','reserved','landlord_id'];
 
+ public $timestamps = false;
 
     public function features()
     {
