@@ -26,3 +26,6 @@
 4.- deploy data -> php artisan db:seed  <br>
 5.- clean evoriment -> php artisan  optimize <br>
 6.- run server -> php artisan serve </h5>
+<br>
+<h6>wathc in youtube</h6>
+<a href="https://www.youtube.com/watch?v=7jFUaa9OTOI">watch it here</a>
