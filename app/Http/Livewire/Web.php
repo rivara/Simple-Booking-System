@@ -65,7 +65,6 @@ class Web extends Component
     }
 
 
-
     public function mount(){
         $this->features = Feature::all();
     }

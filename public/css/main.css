@@ -1,33 +1,33 @@
-.box{
-    background-color:#e0e0e0;
+.box {
+    background-color: #e0e0e0;
     padding: 20px;
     border: 1px solid #bdbdbd;
-    margin:10px;
+    margin: 10px;
 }
- .grey{
+.grey {
     color: silver;
 }
 
- .floatleft{
+.floatleft {
     float: left;
 }
 
-.floatright{
+.floatright {
     float: right;
 }
 
-.wrapper{
+.wrapper {
     width: 100%;
 }
-.text p{
+.text p {
     size: 5px;
     text-indent: 2px;
 }
-.close{
-    float:right;
+.close {
+    float: right;
     font-weight: bold;
-    text-decoration:none;
+    text-decoration: none;
     font-size: 20px;
-    color:inherit;
+    color: inherit;
     padding-bottom: 15px;
 }
